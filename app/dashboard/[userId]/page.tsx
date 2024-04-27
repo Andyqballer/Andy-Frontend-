@@ -6,7 +6,12 @@ export default function UserDetails({params}: {
     return (
         <div className="w-full py-[3rem] bg-white">
             <div className="w-[60%] mx-auto py-4 px-[3rem] bg-gray-100 rounded-lg">
-                <h2 className="py-[1rem] text-[1.3rem] font-medium border-b border-gray-300">User Details</h2>
+                <div className="flex justify-between items-center border-b border-gray-300">
+                    <h2 className="py-[1rem] text-[1.3rem] font-medium ">User Details</h2>
+                    <div className="">
+                        <Link href={`/dashboard/create-task/1`} className="p-2 text-white text-[0.9rem] bg-indigo-500 rounded-md text-center">Assign task</Link>
+                    </div>
+                </div>
                 <div className="w-full py-4 flex justify-end items-center gap-[1rem] ">
                     <div className="px-[0.6rem] py-[0.4rem] flex justify-center items-center gap-[1rem] text-red-600 font-medium bg-gray-300 rounded-lg">
                         <div>Delete user</div>
@@ -30,6 +35,9 @@ export default function UserDetails({params}: {
                 <div className="pb-3 flex justify-start items-center">
                     <div className="pr-[3rem] text-[1rem]">Password: </div>
                     <div className="text-[1.1rem] font-medium">lksjdfie83894</div>
+                </div>
+                <div>
+                    <Link href={`/dashboard/billing/create-billing/1`}>Create a bill</Link>
                 </div>
             </div>
         </div>

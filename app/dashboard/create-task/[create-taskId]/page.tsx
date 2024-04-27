@@ -1,4 +1,6 @@
-export default function CreateTask() {
+export default function CreateTask({params}: {
+    params: {userId: string}
+}) {
     return (
         <div className="pt-[4rem]">
             <form className="max-w-sm mx-auto">
