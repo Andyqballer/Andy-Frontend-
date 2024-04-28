@@ -1,8 +1,6 @@
 import Modal from "@/components/Modal";
 
-export default function CreateBill({params}: {
-    params: {userId: string}
-}) {
+export default function CreateBill() {
     return (
         <Modal>
             <div className="w-[550px] h-[500px] py-[3rem] bg-white rounded-lg">
