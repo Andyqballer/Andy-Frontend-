@@ -4,20 +4,47 @@ export const billList = [
         name: 'Agyemang Florence',
         task: 'Joshua Tech',
         hours: 7,
-        amount: 64
+        amount: 64,
+        status: 'Pending',
     },
     {
-        id: 1, 
+        id: 2, 
         name: 'Agyemang Florence',
         task: 'Joshua Tech',
         hours: 7,
-        amount: 64
+        amount: 64,
+        status: 'Pending',
     },
     {
-        id: 1, 
+        id: 3, 
         name: 'Agyemang Florence',
         task: 'Joshua Tech',
         hours: 7,
-        amount: 64
+        amount: 64,
+        status: 'Pending',
+    },
+    {
+        id: 4, 
+        name: 'Agyemang Florence',
+        task: 'Joshua Tech',
+        hours: 7,
+        amount: 64,
+        status: 'Pending',
+    },
+    {
+        id: 5, 
+        name: 'Agyemang Florence',
+        task: 'Joshua Tech',
+        hours: 7,
+        amount: 64,
+        status: 'Pending',
+    },
+    {
+        id: 6, 
+        name: 'Agyemang Florence',
+        task: 'Joshua Tech',
+        hours: 7,
+        amount: 64,
+        status: 'Pending',
     },
 ]

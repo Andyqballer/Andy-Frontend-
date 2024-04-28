@@ -4,16 +4,17 @@ import { tableData } from "../mockdata";
 import Link from "next/link";
 import { tasks } from "../taskData";
 import { useRouter } from "next/navigation";
+import { billList } from "./BilLists";
 
 export default function BillingList() {
   const router = useRouter();
 
-  const tableActions = (e: React.MouseEvent<HTMLDivElement | HTMLTableRowElement>, action: string, taskId: number) => {
+  const tableActions = (e: React.MouseEvent<HTMLDivElement | HTMLTableRowElement>, action: string, userId: number) => {
     e.stopPropagation();
 
     switch(action){
         case 'view task':
-            router.push(`/dashboard/tasks/${taskId}`)
+            router.push(`/dashboard/billing/${userId}`)
             return;
         case 'delete':
             alert('Deleting')
@@ -62,19 +63,21 @@ export default function BillingList() {
                       <th className="px-2 pt-2 pb-[0.8rem] font-medium text-[1.1rem]">Task</th>
                       <th className="px-2 pt-2 pb-[0.8rem] font-medium text-[1.1rem]">Hours</th>
                       <th className="px-2 pt-2 pb-[0.8rem] font-medium text-[1.1rem]">Amount</th>
+                      <th className="px-2 pt-2 pb-[0.8rem] font-medium text-[1.1rem]">Status</th>
                       <th className="px-2 pt-2 pb-[0.8rem] font-medium text-[1.1rem]">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {
-                      tasks.map((data, index) => (
+                      billList.map((data, index) => (
                         <tr onClick={(e) => tableActions(e, 'view task', data.id)} key={index} className="hover:bg-gray-200 cursor-pointer">
                           <td className="p-2 flex justify-start items-center gap-[1rem]">
-                            <div className="font-medium ">{data.title}</div>
+                            <div className="font-medium ">{data.name}</div>
                           </td>
-                          <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.asignee}</td>
-                          <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.status}</td>
+                          <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.task}</td>
                           <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.hours}</td>
+                          <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.amount}</td>
+                          <td className="px-2 pb-[1.4rem] pt-[1.3rem] ">{data.status}</td>
                           <td className="px-2 pb-[1.4rem] pt-[1.3rem] flex justify-start items-center gap-[1rem]">
                           <div onClick={e=> tableActions(e, 'delete', data.id)} className="text-red-600 font-medium">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
@@ -82,7 +85,7 @@ export default function BillingList() {
                                 </svg>
                               </div>
                               <div onClick={e=> tableActions(e, 'update', data.id)} className="p-2 bg-gray-300 text-[0.8rem] font-medium cursor-pointer rounded-md">
-                                Update BillingList
+                                Update
                               </div>
                           </td>
                         </tr>
